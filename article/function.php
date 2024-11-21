@@ -88,16 +88,16 @@ function trending_litle(){
         echo '
                     <i class="fas fa-angle-double-right"></i>
                     <a href="./news-detail.php?id=' . $row['id'] . '">' . $row['title'] . '</a> &ensp;
-                ';
+            ';
     }
 }
 
 function search_news($query){
     global $connection;
-    $sql = "SELECT * FROM `news` WHERE title LIKE '%$query%'";
+    $sql = "SELECT * FROM `new` WHERE title LIKE '%$query%'";
     $rs = $connection->query($sql);
     while ($row = mysqli_fetch_assoc($rs)) {
-        $date = $row['create-at'];
+        $date = $row['create_at'];
         $date = date('d/m/y');
         echo '
             <div class="col-4">
@@ -138,7 +138,12 @@ function show_trending(){
             </div>
         ';
     }
+
+
+    
 }
+
+
 
 
 

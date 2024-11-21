@@ -63,6 +63,7 @@ $row = mysqli_fetch_assoc($result );//fetch for show
                                 
                             </ul>
                         </div>
+
                         <div class="wrap-bottom">
                             <ul>
                             <li class="parent">
@@ -77,6 +78,24 @@ $row = mysqli_fetch_assoc($result );//fetch for show
                                         </li>
                                     </ul>
                                 </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="wrap-bottom">
+                            <ul>
+                            <li class="parent">
+                                    <a class="parent" href="javascript:void(0)">
+                                        <span>FEEDBACK</span>
+                                        <img src="assets/icon/arrow.png" alt=""> 
+                                    </a>
+                                    <ul class="child">
+                                        <li>
+                                            <a href="view-feedback.php" name="viewNews">View feedback</a>
+                                            
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li class="parent">
                                     <a class="parent" href="logout.php">
                                         <span>Logout</span>
@@ -84,5 +103,7 @@ $row = mysqli_fetch_assoc($result );//fetch for show
                                 </li> 
                             </ul>
                         </div>
+
+
                     </div>
                 </div> 

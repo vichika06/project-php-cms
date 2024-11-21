@@ -11,7 +11,7 @@
                 <div class="col-12">
                     <div class="content-trending">
                         <div class="content-left">
-                            SPORT NEWS
+                            SOCIAL NEWS
                         </div>   
                     </div>
                 </div>
@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <?php 
-                   show_sport_news('sport' , 'national');
+                   show_sport_news('social' , 'international');
                 ?>
 
             </div>

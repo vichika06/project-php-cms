@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <?php 
-                   show_sport_news('sport' , 'national');
+                   show_sport_news('sport' , 'international');
                 ?>
 
             </div>
