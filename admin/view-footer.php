@@ -1,10 +1,11 @@
 <?php
 include('sidebar.php');
+
 ?>
 <div class="col-10">
     <div class="content-right">
         <div class="top">
-            <h3>FEEDBACK FORM</h3>
+            <h3>View Footers</h3>
         </div>
         <div class="bottom view-post">
             <figure>
@@ -16,41 +17,42 @@ include('sidebar.php');
                                     </div> -->
                     <table class="table" border="1px">
                         <tr>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Telephone</th>
-                            <th>Address</th>
-                            <th>Message</th>
-
+                            <th>Description</th>
+                            <th>Logo 1</th>
+                            <th>Logo 2</th>
+                            <th>Logo 3</th>
 
                         </tr>
 
 
                         <?php
-                        $sql_feedback = "SELECT * FROM feedback WHERE 1";
-                        $result       = $connection->query($sql_feedback);
+                        global $connection;
+                        $sql_footer = "SELECT * FROM about_us WHERE 1";
+                        $result       = $connection->query( $sql_footer);
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo '
                                                     <tr>
-                                                        <td>' . $row['username'] . '</td>
-                                                        <td>' . $row['email'] . '</td>
-                                                        <td>' . $row['telephone'] . '</td>
-                                                        <td>' . $row['address'] . '</td>
-                                                        <td>' . $row['message'] . '</td>
+                                                        <td>' . $row['descreiption'] . '</td>
+                                                        <td>' . $row['logo1'] . '</td>
+                                                        <td>' . $row['logo2'] . '</td>
+                                                        <td>' . $row['logo3'] . '</td>
 
-                                                      
-                                                      
+                                                        <td>
+                                                        <a href="update_new.php?id=' . $row['id'] . '"class="btn btn-primary" name="updateNews" >Update</a>
+                                                            
+                                                             <input type="hidden" name="remove_new_id" value="' . $row['id'] . '">
+                                                            
+                                                        </td>
                                                     </tr>
 
                                         
-                                                        </form>
                               ';
                         }
                         ?>
                     </table>
                     <ul class="pagination">
                         <li>
-                           
+
                         </li>
                     </ul>
 

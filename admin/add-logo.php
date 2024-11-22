@@ -22,18 +22,7 @@
                                         <label>Thumbnail</label>
                                         <input type="file" class="form-control" name="thumbnail">
                                     </div>
-                                    <!-- <div class="form-group">
-                                        <label>Option</label>
-                                        <input type="checkbox" class="form-check-input">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>File</label>
-                                        <input type="file" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Description</label>
-                                        <textarea class="form-control"></textarea>
-                                    </div> -->
+                                    
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary" name="cornfirm_add">Cornfirm</button>
                                         <!-- <button type="submit" class="btn btn-success">Success</button> -->

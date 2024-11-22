@@ -39,6 +39,44 @@ function show_sport_news($category, $new_type)
     }
 }
 
+function insert_feedback(): void{
+    global $connection;
+    if(isset($_POST['btn_message'])){
+         $get_username = $_POST['username'];
+         $get_email    = $_POST['email'];
+         $get_phone    = $_POST['telephone'];
+         $get_address  = $_POST['address'];
+         $get_message  = $_POST['message'];
+
+        if(!empty($get_username) && !empty($get_email) && !empty($get_phone) && !empty($get_address) && !empty($get_message)){
+            $sql_get_feedback = "INSERT INTO `feedback`(`username`, `email`, `telephone`, `address`, `message`) VALUES ('$get_username','$get_email','$get_phone','$get_address','$get_message') ";
+            $result = $connection->query($sql_get_feedback);
+            if($result){
+                echo '
+                    <script>
+                        $(document).ready(function(){
+                            swal({
+                                title: "Success",
+                                text: "Your feedback success",
+                                icon: "success",
+                                button: "Confirm",
+                            });
+                        })
+                    </script>
+                ';
+            }
+        }
+
+    };
+
+}
+
+function add_footer(){
+    
+}
+
+
+
 
 
 
