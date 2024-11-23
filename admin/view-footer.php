@@ -1,6 +1,5 @@
 <?php
 include('sidebar.php');
-
 ?>
 <div class="col-10">
     <div class="content-right">
@@ -27,24 +26,19 @@ include('sidebar.php');
 
                         <?php
                         global $connection;
-                        $sql_footer = "SELECT * FROM about_us WHERE 1";
-                        $result       = $connection->query( $sql_footer);
+                        $sql_footer = "SELECT * FROM about_us ";
+                        $result       = $connection->query($sql_footer);
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo '
-                                                    <tr>
+                                                     <tr>
                                                         <td>' . $row['descreiption'] . '</td>
-                                                        <td>' . $row['logo1'] . '</td>
-                                                        <td>' . $row['logo2'] . '</td>
-                                                        <td>' . $row['logo3'] . '</td>
-
+                                                        <td><img src=" ./assets/image/' . $row['logo1'] . '" alt="Logo 1" width="50"></td>
+                                                        <td><img src=" ./assets/image/' . $row['logo2'] . '" alt="Logo 2" width="50"></td>
+                                                        <td><img src=" ./assets/image/' . $row['logo3'] . '" alt="Logo 3" width="50"></td>
                                                         <td>
-                                                        <a href="update_new.php?id=' . $row['id'] . '"class="btn btn-primary" name="updateNews" >Update</a>
-                                                            
-                                                             <input type="hidden" name="remove_new_id" value="' . $row['id'] . '">
-                                                            
+                                                            <a href="update-footer.php?id=' . $row['id'] . '" class="btn btn-primary">Update</a>
                                                         </td>
                                                     </tr>
-
                                         
                               ';
                         }

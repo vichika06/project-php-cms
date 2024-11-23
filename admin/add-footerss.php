@@ -18,10 +18,12 @@ include('sidebar.php');
                         <label>Logo 1</label>
                         <input type="file" class="form-control" name="logo1">
                     </div>
+
                     <div class="form-group">
                         <label>Logo 2</label>
                         <input type="file" class="form-control" name="logo2">
                     </div>
+                    
                     <div class="form-group">
                         <label>Logo 3</label>
                         <input type="file" class="form-control" name="logo3">

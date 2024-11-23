@@ -325,9 +325,8 @@ function addFooter()
 
         $id = $_SESSION['id'];
 
-
-        if (!empty($logo1) && !empty($logo2) && !empty($logo3) && !empty($description)) {
-            $sql_Add_footer = "INSERT INTO `about_us` (`id`,`logo1`,`logo2`,`logo3`,`descreiption`) VALUES('$id','$logo1','$logo2','$logo3','$descreiption')";
+      
+            $sql_Add_footer = "INSERT INTO `about_us` (id,logo1,logo2,logo3,descreiption) VALUES('$id','$logo1','$logo2','$logo3','$descreiption')";
             $result = $connection->query($sql_Add_footer);
 
             if ($result) {
@@ -344,7 +343,55 @@ function addFooter()
                     </script>
                 ';
             }
-        }
+        
     }
 }
 addFooter();
+
+function update_footer(){
+    global $connection;
+    if(isset($_POST['footer_submit-up'])){
+        $id  = $_GET['id'];
+        $desc = $_POST['updescreiption'];
+        $logo1 = $_FILES['uplogo1']['name'];
+        $logo2 = $_FILES['uplogo2']['name'];
+        $logo3 = $_FILES['uplogo3']['name'];
+
+        if($logo1 == null){
+            $logo1 = $_POST['oldlogo1'];
+        }else{
+            $logo1 = move_file('uplogo1');
+        }
+        if($logo2 == null){
+            $logo2 = $_POST['oldlogo2'];
+        }else{
+            $logo2 = move_file('uplogo2');
+        }
+        if($logo3 == null){
+            $logo3 = $_POST['oldlogo3'];
+        }else{
+            $logo3 = move_file('uplogo3');
+        }
+
+        if(!empty($desc) && !empty($logo1) && !empty($logo2) && !empty($logo3)){
+            $sql_update_footer = "UPDATE `about_us` SET `descreiption`='$desc',`logo1`='$logo1',`logo2`='$logo2',`logo3`='$logo3' WHERE id = '$id' ";
+            $result = $connection->query($sql_update_footer);
+            if ($result) {
+                echo '
+                    <script>
+                        $(document).ready(function(){
+                            swal({
+                                title: "Success ",
+                                text: "amm",
+                                icon: "success",
+                                button: "Confirm",
+                            });
+                        })
+                    </script>
+                ';
+            }
+        }
+    }
+
+}
+update_footer();
